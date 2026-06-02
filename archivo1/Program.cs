@@ -5,8 +5,10 @@ int Menu()
 {
     Console.Write("1.agregar");
     Console.Write("2. mostrar ");
-    Console.Write("3. salir ");
-}
+    Console.Write("3. guardar");
+    Console.WriteLine("4. salir");
+    Console.Write("digite tu opcion");
+   return = int.Parse(Console.ReadLine());
 
 void pedirDatos()
 {
@@ -26,6 +28,14 @@ void mostrarDatos()
     {
         Console.WriteLine($"{estudiante[i].nombre} / {estudiante[i].carrera} / {estudiante[i].promedio} ");
     }
+}
+
+void guardarArchivo()
+{
+    StreamWriter archivo = new StreamWriter(" registro.csv ");
+    for(int i = 0; i<10 ; i++)
+    {
+        archivo.WriteLine(estudiantes[i].nombre + ";" + estudiante[i].carrera);
 }
 void main()
 {
@@ -47,7 +57,7 @@ void main()
             default:
                 Console.WriteLine("opcion invalida");
                 break;
-        } while (opcion != 3) ;
+        } while (opcion != 4) ;
     }
     struct Estudiante 
 {
